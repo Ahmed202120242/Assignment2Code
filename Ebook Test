@@ -1,0 +1,54 @@
+from Ebook Code Import *
+# Creating objects for each class
+
+# Customer
+customer1 = Customer("Mohammed Sumbool", "Mohammed@example.com", 101, True)
+customer2 = Customer("Khaled Kashmeeri", "Khaleed@example.com", 102, False)
+
+# ShoppingCart
+cart1 = ShoppingCart(1, ["Ebook1"], 101, 29.99, True)
+cart2 = ShoppingCart(2, ["Ebook2"], 102, 9.99, False)
+
+# Ebookstore
+store1 = Ebookstore("Great Khan", "123 E-book Street", "@GreatBooksStore", 1234567890, "www.China.com")
+store2 = Ebookstore("World of Peacecraft", "123 Book Lane", "@BookWorld", 1233456778, "www.Blizzred.com")
+
+# Ebook
+ebook1 = Ebook("The Great Adventure", "Maria Arthur", 2020, "Adventure", "An amazing adventure book", 15.99)
+ebook2 = Ebook("The Book of Life", "Saloon Author", 2021, "Self-help", "A self-help book to change your life", 12.99)
+
+# Order
+order1 = Order("ORD123", "2024-11-07", ["Ebook1"], 29.99, 0.00)
+order2 = Order("ORD124", "2024-11-08", ["Ebook2"], 9.99, 0.00)
+
+# Invoice
+invoice1 = Invoice(1001, "ORD123", 0.05, 0.00, 31.49)
+invoice2 = Invoice(1002, "ORD124", 0.05, 0.00, 10.49)
+
+# Catalog
+catalog1 = Catalog("Adventure Books", 10, ["Adventure", "Sci-Fi"], "2024-11-01", 200)
+catalog2 = Catalog("Self-help Books", 5, ["Self-help", "Motivation"], "2024-11-02", 150)
+
+# Discount
+discount1 = Discount(1, "Black Friday Sale", 20, "2024-11-01", "2024-11-30", True)
+bulk_discount = BulkDiscount(2, "Bulk Purchase Discount", 15, "2024-11-01", "2024-11-30", True, 10, 500, 5, 5)
+loyalty_discount = LoyaltyMemberDiscount(3, "Loyalty Member Discount", 10, "2024-11-01", "2024-11-30", True, 5, 3, 50, 8)
+
+# Printing objects using __str__()
+print(customer1)
+print(customer2)
+print(cart1)
+print(cart2)
+print(store1)
+print(store2)
+print(ebook1)
+print(ebook2)
+print(order1)
+print(order2)
+print(invoice1)
+print(invoice2)
+print(catalog1)
+print(catalog2)
+print(discount1)
+print(bulk_discount)
+print(loyalty_discount)
