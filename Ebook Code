@@ -1,0 +1,461 @@
+# Customer Class
+class Customer:
+    def __init__(self, name, contact_info, account_id, is_loyalty_member):
+        self.__name = name  # Private attribute
+        self.__contact_info = contact_info  # Private attribute
+        self.__account_id = account_id  # Private attribute
+        self.__is_loyalty_member = is_loyalty_member  # Private attribute
+        self.__purchase_history = []  # Private attribute
+
+    def __str__(self):
+        return f"Customer(Name: {self.__name}, Contact Info: {self.__contact_info}, Account ID: {self.__account_id}, Loyalty Member: {self.__is_loyalty_member})"
+
+    # Getters and Setters
+    def getname(self):
+        return self.__name
+
+    def setName(self, name):
+        self.__name = name
+
+    def getaccount_Id(self):
+        return self.__account_id
+
+    def getAccountId(self, account_id):
+        self.__account_id = account_id
+
+    def getis_Loyalty_Member(self):
+        return self.__is_loyalty_member
+
+    def setIsLoyaltyMember(self, status):
+        self.__is_loyalty_member = status
+
+    def addPurchase(self, purchase):
+        self.__purchase_history.append(purchase)
+
+    def updateInfo(self, new_contact_info):
+        self.__contact_info = new_contact_info
+
+
+# ShoppingCart Class
+class ShoppingCart:
+    def __init__(self, cart_id, items, customer_id, subtotal, discount_apply):
+        self.__cart_id = cart_id  # Private attribute
+        self.__items = items  # Private attribute
+        self.__customer_id = customer_id  # Private attribute
+        self.__subtotal = subtotal  # Private attribute
+        self.__discount_apply = discount_apply  # Private attribute
+
+    def __str__(self):
+        return f"ShoppingCart(Cart ID: {self.__cart_id}, Items: {self.__items}, Subtotal: {self.__subtotal}, Discount Applied: {self.__discount_apply})"
+
+    # Getters and Setters
+    def getcart_Id(self):
+        return self.__cart_id
+
+    def setCartId(self, cart_id):
+        self.__cart_id = cart_id
+
+    def getsubtotal(self):
+        return self.__subtotal
+
+    def setSubtotal(self, subtotal):
+        self.__subtotal = subtotal
+
+    def getdiscount_Apply(self):
+        return self.__discount_apply
+
+    def setDiscountApply(self, discount_apply):
+        self.__discount_apply = discount_apply
+
+    def addToCart(self, item):
+        self.__items.append(item)
+
+    def removeFromCart(self, item):
+        if item in self.__items:
+            self.__items.remove(item)
+
+
+# Ebookstore Class
+class Ebookstore:
+    def __init__(self, store_name, location, store_twitter, store_phone_number, store_website):
+        self.__store_name = store_name  # Private attribute
+        self.__location = location  # Private attribute
+        self.__store_twitter = store_twitter  # Private attribute
+        self.__store_phone_number = store_phone_number  # Private attribute
+        self.__store_website = store_website  # Private attribute
+        self.__customers = []  # Private attribute
+
+    def __str__(self):
+        return f"Ebookstore(Name: {self.__store_name}, Location: {self.__location}, Twitter: {self.__store_twitter}, Phone: {self.__store_phone_number}, Website: {self.__store_website})"
+
+    # Getters and Setters
+    def getstore_Name(self):
+        return self.__store_name
+
+    def setStoreName(self, store_name):
+        self.__store_name = store_name
+
+    def getlocation(self):
+        return self.__location
+
+    def setLocation(self, location):
+        self.__location = location
+
+    def getstore_Twitter(self):
+        return self.__store_twitter
+
+    def setStoreTwitter(self, store_twitter):
+        self.__store_twitter = store_twitter
+
+    def getstore_phone_number(self):
+        return self.__store_phone_number
+
+    def setStorePhoneNumber(self, store_phone_number):
+        self.__store_phone_number = store_phone_number
+
+    def getstore_website(self):
+        return self.__store_website
+
+    def setStoreWebsite(self, store_website):
+        self.__store_website = store_website
+
+    def addCustomer(self, customer):
+        self.__customers.append(customer)
+
+    def placeOrder(self, customer, order):
+        # Logic for placing order
+        pass
+
+
+# Ebook Class
+class Ebook:
+    def __init__(self, title, author, publish_year, genre, description, price):
+        self.__title = title  # Private attribute
+        self.__author = author  # Private attribute
+        self.__publish_year = publish_year  # Private attribute
+        self.__genre = genre  # Private attribute
+        self.__description = description  # Private attribute
+        self.__price = price  # Private attribute
+
+    def __str__(self):
+        return f"Ebook(Title: {self.__title}, Author: {self.__author}, Published Year: {self.__publish_year}, Genre: {self.__genre}, Description: {self.__description}, Price: {self.__price})"
+
+
+    # Getters and Setters
+    def gettitle(self):
+        return self.__title
+
+    def setTitle(self, title):
+        self.__title = title
+
+    def getauthor(self):
+        return self.__author
+
+    def setAuthor(self, author):
+        self.__author = author
+
+    def getpublished_Year(self):
+        return self.__publish_year
+
+    def setPublishedYear(self, published_year):
+        self.__publish_year = published_year
+
+    def getgenre(self):
+        return self.__genre
+
+    def setGenre(self, genre):
+        self.__genre = genre
+
+    def getdescription(self):
+        return self.__description
+
+    def setDescription(self, description):
+        self.__description = description
+
+    def getprice(self):
+        return self.__price
+
+    def setPrice(self, price):
+        self.__price = price
+
+    def isavailable(self):
+        # Logic for availability
+        return True
+
+    def Chooselanguage(self):
+        # Logic for choosing language
+        pass
+
+
+# Order Class
+class Order:
+    def __init__(self, order_id, order_date, items, total_price, discount_amount):
+        self.__order_id = order_id  # Private attribute
+        self.__order_date = order_date  # Private attribute
+        self.__items = items  # Private attribute
+        self.__total_price = total_price  # Private attribute
+        self.__discount_amount = discount_amount  # Private attribute
+
+    def __str__(self):
+        return f"Order(Order ID: {self.__order_id}, Date: {self.__order_date}, Items: {self.__items}, Total Price: {self.__total_price}, Discount: {self.__discount_amount})"
+
+    # Getters and Setters
+    def getorder_Id(self):
+        return self.__order_id
+
+    def setOrderId(self, order_id):
+        self.__order_id = order_id
+
+    def gettotal_Price(self):
+        return self.__total_price
+
+    def setTotalPrice(self, total_price):
+        self.__total_price = total_price
+
+    def getdiscount_Amount(self):
+        return self.__discount_amount
+
+    def setDiscountAmount(self, discount_amount):
+        self.__discount_amount = discount_amount
+
+    def addItem(self, item):
+        self.__items.append(item)
+
+    def removeItem(self, item):
+        if item in self.__items:
+            self.__items.remove(item)
+
+
+# Invoice Class
+class Invoice:
+    def __init__(self, invoice_number, order_id, tax_rate, discount_total, final_total):
+        self.__invoice_number = invoice_number  # Private attribute
+        self.__order_id = order_id  # Private attribute
+        self.__tax_rate = tax_rate  # Private attribute
+        self.__discount_total = discount_total  # Private attribute
+        self.__final_total = final_total  # Private attribute
+
+    def __str__(self):
+        return f"Invoice(Invoice Number: {self.__invoice_number}, Order ID: {self.__order_id}, Tax Rate: {self.__tax_rate}, Discount Total: {self.__discount_total}, Final Total: {self.__final_total})"
+
+    # Getters and Setters
+    def getinvoice_Number(self):
+        return self.__invoice_number
+
+    def setInvoiceNumber(self, invoice_number):
+        self.__invoice_number = invoice_number
+
+    def getorder_Id(self):
+        return self.__order_id
+
+    def setOrderId(self, order_id):
+        self.__order_id = order_id
+
+    def getfinal_Total(self):
+        return self.__final_total
+
+    def setFinalTotal(self, final_total):
+        self.__final_total = final_total
+
+    def calculatefinaltotal(self, subtotal):
+        # Example of calculating final total with tax and discount
+        tax_amount = subtotal * self.__tax_rate
+        total_after_discount = subtotal - self.__discount_total
+        self.__final_total = total_after_discount + tax_amount
+        return self.__final_total
+
+    def printinvoice(self):
+        print(f"Invoice {self.__invoice_number} for Order {self.__order_id}:\nTotal: {self.__final_total}")
+
+
+# Catalog Class
+class Catalog:
+    def __init__(self, catalog_name, last_updated, total_ebooks, genres, total_pages):
+        self.__catalog_name = catalog_name  # Private attribute
+        self.__last_updated = last_updated  # Private attribute
+        self.__total_ebooks = total_ebooks  # Private attribute
+        self.__genres = genres  # Private attribute
+        self.__total_pages = total_pages  # Private attribute
+        self.__ebooks = []  # Private attribute
+
+    def __str__(self):
+        return f"Catalog(Catalog Name: {self.__catalog_name}, Total E-books: {self.__total_ebooks}, Genres: {self.__genres}, Last Updated: {self.__last_updated}, Total Pages: {self.__total_pages})"
+
+    # Getters and Setters
+    def getcatalog_Name(self):
+        return self.__catalog_name
+
+    def setCatalogName(self, catalog_name):
+        self.__catalog_name = catalog_name
+
+    def getlast_Updated(self):
+        return self.__last_updated
+
+    def setLastUpdated(self, last_updated):
+        self.__last_updated = last_updated
+
+    def gettotal_Ebooks(self):
+        return self.__total_ebooks
+
+    def setTotalEbooks(self, total_ebooks):
+        self.__total_ebooks = total_ebooks
+
+    def gettotal_pages(self):
+        return self.__total_pages
+
+    def settotalPages(self, total_pages):
+        self.__total_pages = total_pages
+
+    def addEBook(self, ebook):
+        self.__ebooks.append(ebook)
+
+    def removeEBook(self, ebook):
+        if ebook in self.__ebooks:
+            self.__ebooks.remove(ebook)
+
+
+# Discount Class (with Protected Attributes)
+class Discount:
+    def __init__(self, discount_id, description, discount_rate, start_date, end_date, is_active):
+        self._discount_id = discount_id  # Protected attribute
+        self._description = description  # Protected attribute
+        self._discount_rate = discount_rate  # Protected attribute
+        self._start_date = start_date  # Protected attribute
+        self._end_date = end_date  # Protected attribute
+        self._is_active = is_active  # Protected attribute
+
+    def __str__(self):
+        return (f"Discount(ID: {self._discount_id}, Description: {self._description}, "
+                f"Rate: {self._discount_rate}%, Start Date: {self._start_date}, "
+                f"End Date: {self._end_date}, Active: {self._is_active})")
+
+
+    # Getters and Setters
+    def getdiscount_Id(self):
+        return self._discount_id
+
+    def setDiscountId(self, discount_id):
+        self._discount_id = discount_id
+
+    def getdescription(self):
+        return self._description
+
+    def setDescription(self, description):
+        self._description = description
+
+    def getdiscount_Rate(self):
+        return self._discount_rate
+
+    def setDiscountRate(self, discount_rate):
+        self._discount_rate = discount_rate
+
+    def getstart_Date(self):
+        return self._start_date
+
+    def setStartDate(self, start_date):
+        self._start_date = start_date
+
+    def getend_Date(self):
+        return self._end_date
+
+    def setEndDate(self, end_date):
+        self._end_date = end_date
+
+    def applyDiscount(self, price):
+        return price - (price * self._discount_rate)
+
+    def isActive(self):
+        return self._is_active
+
+
+# BulkDiscount Class (inherits from Discount)
+class BulkDiscount(Discount):
+    def __init__(self, discount_id, description, discount_rate, start_date, end_date, is_active, loyalty_discount_percentage, minimum_points_required, minimum_quantity, additional_discount_rate):
+        super().__init__(discount_id, description, discount_rate, start_date, end_date, is_active)
+        self.__loyalty_discount_percentage = loyalty_discount_percentage  # Private attribute
+        self.__minimum_points_required = minimum_points_required  # Private attribute
+        self.__minimum_quantity = minimum_quantity  # Private attribute
+        self.__additional_discount_rate = additional_discount_rate  # Private attribute
+
+    def __str__(self):
+        return (f"BulkDiscount(ID: {self._discount_id}, Description: {self._description}, "
+                f"Rate: {self._discount_rate}%, Loyalty Discount: {self.__loyalty_discount_percentage}%, "
+                f"Minimum Points: {self.__minimum_points_required}, Minimum Quantity: {self.__minimum_quantity}, "
+                f"Additional Discount: {self.__additional_discount_rate}%)")
+
+    # Getters and Setters
+    def getLoyaltyDiscountPercentage(self):
+        return self.__loyalty_discount_percentage
+
+    def setLoyaltyDiscountPercentage(self, loyalty_discount_percentage):
+        self.__loyalty_discount_percentage = loyalty_discount_percentage
+
+    def getMinimumPointsRequired(self):
+        return self.__minimum_points_required
+
+    def setMinimumPointsRequired(self, minimum_points_required):
+        self.__minimum_points_required = minimum_points_required
+
+    def getMinimumQuantity(self):
+        return self.__minimum_quantity
+
+    def setMinimumQuantity(self, minimum_quantity):
+        self.__minimum_quantity = minimum_quantity
+
+    def getAdditionalDiscountRate(self):
+        return self.__additional_discount_rate
+
+    def setAdditionalDiscountRate(self, additional_discount_rate):
+        self.__additional_discount_rate = additional_discount_rate
+
+    def applyBulkDiscount(self, price, quantity):
+        if quantity >= self.__minimum_quantity:
+            price -= price * self.__additional_discount_rate
+        return price
+
+
+# LoyaltyMemberDiscount Class (inherits from Discount)
+class LoyaltyMemberDiscount(Discount):
+    def __init__(self, discount_id, description, discount_rate, start_date, end_date, is_active, bulk_discount_percentage, minimum_item_required, maximum_discount_amount, loyalty_discount_rate):
+        super().__init__(discount_id, description, discount_rate, start_date, end_date, is_active)
+        self.__bulk_discount_percentage = bulk_discount_percentage  # Private attribute
+        self.__minimum_item_required = minimum_item_required  # Private attribute
+        self.__maximum_discount_amount = maximum_discount_amount  # Private attribute
+        self.__loyalty_discount_rate = loyalty_discount_rate  # Private attribute
+
+    def __str__(self):
+        return (f"LoyaltyMemberDiscount(ID: {self._discount_id}, Description: {self._description}, "
+                f"Rate: {self._discount_rate}%, Bulk Discount: {self.__bulk_discount_percentage}%, "
+                f"Minimum Items: {self.__minimum_item_required}, Max Discount: {self.__maximum_discount_amount}, "
+                f"Loyalty Discount Rate: {self.__loyalty_discount_rate}%)")
+
+    # Getters and Setters
+    def getBulkDiscountPercentage(self):
+        return self.__bulk_discount_percentage
+
+    def setBulkDiscountPercentage(self, bulk_discount_percentage):
+        self.__bulk_discount_percentage = bulk_discount_percentage
+
+    def getMinimumItemRequired(self):
+        return self.__minimum_item_required
+
+    def setMinimumItemRequired(self, minimum_item_required):
+        self.__minimum_item_required = minimum_item_required
+
+    def getMaximumDiscountAmount(self):
+        return self.__maximum_discount_amount
+
+    def setMaximumDiscountAmount(self, maximum_discount_amount):
+        self.__maximum_discount_amount = maximum_discount_amount
+
+    def getLoyaltyDiscountRate(self):
+        return self.__loyalty_discount_rate
+
+    def setLoyaltyDiscountRate(self, loyalty_discount_rate):
+        self.__loyalty_discount_rate = loyalty_discount_rate
+
+    def capDiscountAmount(self, price):
+        discount = price * self.__loyalty_discount_rate
+        if discount > self.__maximum_discount_amount:
+            return self.__maximum_discount_amount
+        return discount
